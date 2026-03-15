@@ -1,0 +1,112 @@
+#!/bin/bash -l
+#SBATCH --job-name=scf_PlusP_9.375Per_Zr_HfO2_2x2x2
+#SBATCH --account=ferroelec
+#SBATCH --partition=standard     # or: compute, debug  (change if needed)
+#SBATCH --time=48:00:00            # adjust if queue allows more/less time
+#SBATCH --nodes=1
+#SBATCH --ntasks=1                 # <<< ONE MPI RANK
+#SBATCH --cpus-per-task=32         # <<< use 32 OpenMP threads
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=yxu@nrel.gov
+
+set -euo pipefail
+
+#######################
+# 0. Paths and setup  #
+#######################
+
+# Run directory (where you submit the job from)
+WORKDIR="${SLURM_SUBMIT_DIR}"
+
+# Scratch directory on Kestrel
+SCRATCH_ROOT="${SCRATCH:-/scratch/$USER}"
+SCRATCH_RUN="${SCRATCH_ROOT}/scf_PlusP_9.375Zr_HfO2_${SLURM_JOB_ID:-$$}"
+
+echo "WORKDIR    = ${WORKDIR}"
+echo "SCRATCH_RUN= ${SCRATCH_RUN}"
+echo "SLURM_JOBID= ${SLURM_JOB_ID:-none}"
+
+#########################
+# 1. Modules & ABINIT   #
+#########################
+
+module purge
+module load PrgEnv-gnu/8.5.0
+module load gcc-native/12.1
+
+export SPACK_ROOT="$HOME/spack"
+. "$SPACK_ROOT/share/spack/setup-env.sh"
+spack env activate -d "$HOME/spack-envs/abinit"
+
+# OpenMP threads only (no multi-rank MPI)
+export OMP_NUM_THREADS=1
+# export OMP_NUM_THREADS="${SLURM_CPUS_PER_TASK:-32}"
+
+# HDF5 safety knobs (avoid locking/version issues)
+export HDF5_USE_FILE_LOCKING=FALSE
+export HDF5_DISABLE_VERSION_CHECK=1
+
+which abinit
+abinit -v
+
+##########################
+# 2. Prepare scratch dir #
+##########################
+
+mkdir -p "${SCRATCH_RUN}"
+cd "${SCRATCH_RUN}"
+
+echo
+echo "Now in SCRATCH_RUN: $(pwd)"
+echo
+
+# Copy input and pseudopotentials from WORKDIR
+cp "${WORKDIR}/scf_PlusP_9.375Per_Zr_HfO2_2x2x2.in" .
+# Copy all psp8 in WORKDIR (Hf.psp8, Zr.psp8, O.psp8, etc.)
+cp "${WORKDIR}"/*.psp8 . 2>/dev/null || true
+
+# Clean old SCF output files to avoid conflicts
+rm -f scf_PlusP_9.375Per_Zr_HfO2_2x2x2.abo scf_PlusP_9.375Per_Zr_HfO2_2x2x2.abo0* scf_PlusP_9.375Per_Zr_HfO2_2x2x2.abo00* \
+      scf_PlusP_9.375Per_Zr_HfO2_2x2x2o_* scf_PlusP_9.375Per_Zr_HfO2_2x2x2i_* scf_PlusP_9.375Per_Zr_HfO2_2x2x2o_OUT.nc \
+      scf_PlusP_9.375Per_Zr_HfO2_2x2x2.out scf_PlusP_9.375Per_Zr_HfO2_2x2x2.log
+
+#############################
+# 3. Run ABINIT (SCF)     #
+#############################
+
+echo "Starting ABINIT (SCF) job in scratch at: $(date)"
+echo "Using OMP_NUM_THREADS=${OMP_NUM_THREADS}"
+echo
+
+# Single-rank ABINIT: avoid '32 singletons' & file clashes
+# srun -n 1 abinit < scf.in > scf.out 2>&1
+srun -n 1 abinit scf_PlusP_9.375Per_Zr_HfO2_2x2x2.in > scf_PlusP_9.375Per_Zr_HfO2_2x2x2.out 2>&1
+echo
+echo "ABINIT finished at: $(date)"
+echo
+
+#############################
+# 4. Copy results back      #
+#############################
+
+# Make sure target exists
+mkdir -p "${WORKDIR}"
+
+# Copy main output and SCF-related files back to WORKDIR
+cp scf_PlusP_9.375Per_Zr_HfO2_2x2x2.out        "${WORKDIR}/"  2>/dev/null || true
+cp scf_PlusP_9.375Per_Zr_HfO2_2x2x2.abo*       "${WORKDIR}/"  2>/dev/null || true
+cp scf_PlusP_9.375Per_Zr_HfO2_2x2x2o_OUT.nc    "${WORKDIR}/"  2>/dev/null || true
+cp scf_PlusP_9.375Per_Zr_HfO2_2x2x2o_*         "${WORKDIR}/"  2>/dev/null || true
+
+echo "Copied results back to: ${WORKDIR}"
+echo
+
+echo "Contents of SCRATCH_RUN:"
+ls -lh
+
+# Optional: uncomment to auto-clean scratch
+# rm -rf "${SCRATCH_RUN}"
+
+echo
+echo "Job complete."
+
