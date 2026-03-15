@@ -1,6 +1,6 @@
 # Doped-HfO2
 
-ABINIT input files, analysis scripts, and selected results for ferroelectric HfO2, including Y- and Sc-doped systems.
+ABINIT input files, analysis scripts, and selected results for ferroelectric HfO2, including Y-,Sc- and Zr-doped systems.
 
 ## Scope
 This repository contains:
