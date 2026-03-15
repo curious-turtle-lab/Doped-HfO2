@@ -1,0 +1,77 @@
+Zr-doped HfO2 spontaneous polarization summary
+==========================================================================================
+
+Compact table
+------------------------------------------------------------------------------------------
+   Zr(%)       rfdir    Axis         P(+P)         P(-P)           ΔP0     Ps(no-branch)          Pq
+                                  (µC/cm²)      (µC/cm²)      (µC/cm²)          (µC/cm²)    (µC/cm²)
+------------------------------------------------------------------------------------------
+   3.125   (0, 0, 1)     z/c         -7.95         -7.95          0.00              0.00       15.90
+   6.250   (0, 0, 1)     z/c         -7.95         -7.95          0.00              0.00       15.90
+   9.375   (0, 0, 1)     z/c         -7.95         -7.95          0.00              0.00       15.90
+
+Detailed block
+------------------------------------------------------------------------------------------
+Zr doping (%)           : 3.125
+Plus output             : /home/yanan/Material/Y_dope_project/3.125Per-Zr-HfO2-2x2x2/berry-scf-Results/berry_PlusP_3.125Zr_HfO2_12247641/berry_PlusP_3.125Per_Zr_HfO2_2x2x2.out
+Minus output            : /home/yanan/Material/Y_dope_project/3.125Per-Zr-HfO2-2x2x2/berry-scf-Results/berry_MinusP_3.125Zr_HfO2_12247642/berry_MinusP_3.125Per_Zr_HfO2_2x2x2.out
+rfdir                   : (0, 0, 1)
+Polarization direction  : z/c
+P(+P)   [C/m^2]         : -0.079512717350
+P(-P)   [C/m^2]         : -0.079512717350
+ΔP0     [C/m^2]         : 0.000000000000
+Ps0     [C/m^2]         : 0.000000000000
+P(+P)   [µC/cm^2]       : -7.95
+P(-P)   [µC/cm^2]       : -7.95
+ΔP0     [µC/cm^2]       : 0.00
+Ps0     [µC/cm^2]       : 0.00
+Pq      [C/m^2]         : 0.159025447900
+Pq      [µC/cm^2]       : 15.90
+Volume   [m^3]          : 1.051716e-27
+rprimd (Angstrom)       :
+    10.009504  0.000000  0.000000
+    0.000000  10.065404  0.000000
+    0.000000  0.000000  10.438904
+------------------------------------------------------------------------------------------
+Zr doping (%)           : 6.250
+Plus output             : /home/yanan/Material/Y_dope_project/6.25Per-Zr-HfO2-2x2x2/berry-scf-Results/berry_PlusP_6.25Zr_HfO2_12248413/berry_PlusP_6.25Per_Zr_HfO2_2x2x2.out
+Minus output            : /home/yanan/Material/Y_dope_project/6.25Per-Zr-HfO2-2x2x2/berry-scf-Results/berry_MinusP_6.25Zr_HfO2_12248602/berry_MinusP_6.25Per_Zr_HfO2_2x2x2.out
+rfdir                   : (0, 0, 1)
+Polarization direction  : z/c
+P(+P)   [C/m^2]         : -0.079512737040
+P(-P)   [C/m^2]         : -0.079512737040
+ΔP0     [C/m^2]         : 0.000000000000
+Ps0     [C/m^2]         : 0.000000000000
+P(+P)   [µC/cm^2]       : -7.95
+P(-P)   [µC/cm^2]       : -7.95
+ΔP0     [µC/cm^2]       : 0.00
+Ps0     [µC/cm^2]       : 0.00
+Pq      [C/m^2]         : 0.159025487277
+Pq      [µC/cm^2]       : 15.90
+Volume   [m^3]          : 1.051719e-27
+rprimd (Angstrom)       :
+    10.009531  0.000000  0.000000
+    0.000000  10.065374  0.000000
+    0.000000  0.000000  10.438931
+------------------------------------------------------------------------------------------
+Zr doping (%)           : 9.375
+Plus output             : /home/yanan/Material/Y_dope_project/9.375Per-Zr-HfO2-2x2x2/berry-scf-Results/berry_PlusP_9.375Zr_HfO2_12247629/berry_PlusP_9.375Per_Zr_HfO2_2x2x2.out
+Minus output            : /home/yanan/Material/Y_dope_project/9.375Per-Zr-HfO2-2x2x2/berry-scf-Results/berry_MinusP_9.375Zr_HfO2_12247637/berry_MinusP_9.375Per_Zr_HfO2_2x2x2.out
+rfdir                   : (0, 0, 1)
+Polarization direction  : z/c
+P(+P)   [C/m^2]         : -0.079512737040
+P(-P)   [C/m^2]         : -0.079512737040
+ΔP0     [C/m^2]         : 0.000000000000
+Ps0     [C/m^2]         : 0.000000000000
+P(+P)   [µC/cm^2]       : -7.95
+P(-P)   [µC/cm^2]       : -7.95
+ΔP0     [µC/cm^2]       : 0.00
+Ps0     [µC/cm^2]       : 0.00
+Pq      [C/m^2]         : 0.159025487277
+Pq      [µC/cm^2]       : 15.90
+Volume   [m^3]          : 1.051719e-27
+rprimd (Angstrom)       :
+    10.009531  0.000000  0.000000
+    0.000000  10.065374  0.000000
+    0.000000  0.000000  10.438931
+------------------------------------------------------------------------------------------
