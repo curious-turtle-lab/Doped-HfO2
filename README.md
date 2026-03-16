@@ -28,8 +28,7 @@ DOI: https://doi.org/10.5281/zenodo.xxxxxxx
 
 The Zenodo dataset contains:
 - WFK files for ±P states
-- DEN files
-- NEB calculation outputs
+- DEN files for ±P states
 - Additional large simulation data
 
 This GitHub repository contains:
