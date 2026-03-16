@@ -7,7 +7,6 @@ This repository contains:
 - structural models for doped HfO2
 - ABINIT SCF and Berry-phase input files
 - Python scripts for polarization extraction and plotting
-- figures
 
 ## Methods
 - Density Functional Theory (DFT)
@@ -29,6 +28,7 @@ DOI: https://doi.org/10.5281/zenodo.xxxxxxx
 The Zenodo dataset contains:
 - WFK files for ±P states
 - DEN files for ±P states
+- Figures
 - Additional large simulation data
 
 This GitHub repository contains:
