@@ -18,7 +18,7 @@ This repository contains:
 - Sc-doped HfO2
 - Zr-doped HfO
 - selected oxygen-vacancy variants
-- 
+  
 ## Data Availability
 Large ABINIT output files (wavefunctions `WFK.nc`, densities `DEN.nc`,
 figures, and related outputs) are too large for GitHub and are archived on Zenodo:
