@@ -19,3 +19,21 @@ This repository contains:
 - Sc-doped HfO2
 - Zr-doped HfO
 - selected oxygen-vacancy variants
+- 
+## Data Availability
+Large ABINIT output files (wavefunctions `WFK.nc`, densities `DEN.nc`,
+figures, and related outputs) are too large for GitHub and are archived on Zenodo:
+
+DOI: https://doi.org/10.5281/zenodo.xxxxxxx
+
+The Zenodo dataset contains:
+- WFK files for ±P states
+- DEN files
+- NEB calculation outputs
+- Additional large simulation data
+
+This GitHub repository contains:
+- ABINIT input files (`.in`)
+- job scripts (`.slurm`)
+- Python analysis and plotting scripts
+- processed data
