@@ -13,7 +13,6 @@ This repository contains:
 - Berry-phase polarization
 
 ## Systems
-- Undoped HfO2
 - Y-doped HfO2
 - Sc-doped HfO2
 - Zr-doped HfO
@@ -23,7 +22,9 @@ This repository contains:
 Large ABINIT output files (wavefunctions `WFK.nc`, densities `DEN.nc`,
 figures, and related outputs) are too large for GitHub and are archived on Zenodo:
 
-DOI: https://doi.org/10.5281/zenodo.xxxxxxx
+Sc doped DEN WFK and_Paper Figures dataset (v1.0): https://doi.org/10.5281/zenodo.18988930
+Y doped DEN WFK dataset (v1.0): https://doi.org/10.5281/zenodo.19043070
+Zr doped DEN WFK dataset (v1.0): https://doi.org/10.5281/zenodo.19068910
 
 The Zenodo dataset contains:
 - WFK files for ±P states
