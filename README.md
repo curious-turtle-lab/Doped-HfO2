@@ -15,8 +15,7 @@ This repository contains:
 ## Systems
 - Y-doped HfO2
 - Sc-doped HfO2
-- Zr-doped HfO
-- selected oxygen-vacancy variants
+- Zr-doped HfO2
   
 ## Data Availability
 Large ABINIT output files (wavefunctions `WFK.nc`, densities `DEN.nc`,
