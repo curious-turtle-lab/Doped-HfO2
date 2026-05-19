@@ -52,3 +52,16 @@ This GitHub repository contains:
 - job scripts (`.slurm`)
 - Python analysis and plotting scripts
 - processed data
+- 
+
+## Article citation:
+If you use this repository, scripts, workflows, or derived datasets in your research, please cite:
+
+Y. Xu et al., "Doped-HfO2: First-principles workflows and analysis tools for doped ferroelectric HfO2", GitHub repository:
+https://github.com/curious-turtle-lab/Doped-HfO2
+
+and
+
+K. O. Diaz-Aponte et al., "Dopant-controlled switching polarization mechanisms in Y- and Sc-doped ferroelectric HfO2 from first principles",
+Computational Materials Science. 270 (2026) 114793.
+https://doi.org/10.1016/j.commatsci.2026.114793.
